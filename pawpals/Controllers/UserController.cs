@@ -19,13 +19,14 @@ namespace pawpals.Controllers
             _context = context;
         }
 
-        // GET: api/User
+        // GET: api/User/ListUsers
         [HttpGet("ListUsers")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
+        // GET: api/User/FindUser/{id}
         [HttpGet("FindUser/{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -39,6 +40,7 @@ namespace pawpals.Controllers
             return user;
         }
 
+        // POST: api/User/AddUser
         [HttpPost("AddUser")]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -48,6 +50,7 @@ namespace pawpals.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
+        // PUT: api/User/UpdateUser/{id}
         [HttpPut("UpdateUser/{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -82,6 +85,7 @@ namespace pawpals.Controllers
             return _context.Users.Any(e => e.UserId == id);
         }
 
+        // DELETE: api/User/DeleteUser/{id}
         [HttpDelete("DeleteUser/{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

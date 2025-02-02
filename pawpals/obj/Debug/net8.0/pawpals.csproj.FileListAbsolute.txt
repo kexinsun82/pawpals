@@ -141,3 +141,7 @@
 /Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/pawpals.pdb
 /Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/pawpals.genruntimeconfig.cache
 /Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/ref/pawpals.dll
+/Users/kellysun/Desktop/humber-github/pawpals/pawpals/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/kellysun/Desktop/humber-github/pawpals/pawpals/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/kellysun/Desktop/humber-github/pawpals/pawpals/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/kellysun/Desktop/humber-github/pawpals/pawpals/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
