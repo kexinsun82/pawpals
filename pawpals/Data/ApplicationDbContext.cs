@@ -27,7 +27,7 @@ public class ApplicationDbContext : IdentityDbContext
                 entity.ToTable("AspNetUsers");
             });
 
-            modelBuilder.Entity<ApplicationRole>(entity =>
+            modelBuilder.Entity<IdentityRole>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnType("VARCHAR(255)");
                 entity.ToTable("AspNetRoles");

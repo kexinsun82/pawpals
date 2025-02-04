@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using pawpals.Data;
 using pawpals.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace pawpals.Controllers
 {
@@ -13,10 +13,12 @@ namespace pawpals.Controllers
     {
 
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: api/User/ListUsers

@@ -31,11 +31,6 @@ namespace pawpals.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("varchar(21)");
-
                     b.Property<string>("Name")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
@@ -51,10 +46,6 @@ namespace pawpals.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasDiscriminator().HasValue("IdentityRole");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -248,6 +239,12 @@ namespace pawpals.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ConnectionId"));
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("VARCHAR(255)");
+
+                    b.Property<string>("ApplicationUserId1")
+                        .HasColumnType("VARCHAR(255)");
+
                     b.Property<int>("FollowerId")
                         .HasColumnType("int");
 
@@ -255,6 +252,10 @@ namespace pawpals.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ConnectionId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ApplicationUserId1");
 
                     b.HasIndex("FollowerId");
 
@@ -321,18 +322,17 @@ namespace pawpals.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("pawpals.Models.ApplicationRole", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
-
-                    b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasDiscriminator().HasValue("ApplicationRole");
-                });
-
             modelBuilder.Entity("pawpals.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.ToTable("AspNetUsers", (string)null);
 
@@ -392,6 +392,14 @@ namespace pawpals.Migrations
 
             modelBuilder.Entity("pawpals.Models.Connection", b =>
                 {
+                    b.HasOne("pawpals.Models.ApplicationUser", null)
+                        .WithMany("Followers")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("pawpals.Models.ApplicationUser", null)
+                        .WithMany("Following")
+                        .HasForeignKey("ApplicationUserId1");
+
                     b.HasOne("pawpals.Models.User", "Follower")
                         .WithMany("Followers")
                         .HasForeignKey("FollowerId")
@@ -421,6 +429,13 @@ namespace pawpals.Migrations
                 });
 
             modelBuilder.Entity("pawpals.Models.User", b =>
+                {
+                    b.Navigation("Followers");
+
+                    b.Navigation("Following");
+                });
+
+            modelBuilder.Entity("pawpals.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Followers");
 
