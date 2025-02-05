@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using pawpals.Data;
 
@@ -11,9 +12,11 @@ using pawpals.Data;
 namespace pawpals.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250204170538_UpdateMember")]
+    partial class UpdateMember
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +28,7 @@ namespace pawpals.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -64,7 +67,7 @@ namespace pawpals.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.HasKey("Id");
 
@@ -76,7 +79,7 @@ namespace pawpals.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -84,6 +87,11 @@ namespace pawpals.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("varchar(21)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -135,6 +143,10 @@ namespace pawpals.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator().HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -153,7 +165,7 @@ namespace pawpals.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.HasKey("Id");
 
@@ -177,7 +189,7 @@ namespace pawpals.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -189,10 +201,10 @@ namespace pawpals.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -204,7 +216,7 @@ namespace pawpals.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("VARCHAR(255)");
 
                     b.Property<string>("LoginProvider")
                         .HasMaxLength(128)
@@ -230,6 +242,12 @@ namespace pawpals.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ConnectionId"));
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("VARCHAR(255)");
+
+                    b.Property<string>("ApplicationUserId1")
+                        .HasColumnType("VARCHAR(255)");
+
                     b.Property<int>("FollowerId")
                         .HasColumnType("int");
 
@@ -237,6 +255,10 @@ namespace pawpals.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ConnectionId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ApplicationUserId1");
 
                     b.HasIndex("FollowerId");
 
@@ -303,6 +325,23 @@ namespace pawpals.Migrations
                     b.ToTable("Pets");
                 });
 
+            modelBuilder.Entity("pawpals.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -356,6 +395,14 @@ namespace pawpals.Migrations
 
             modelBuilder.Entity("pawpals.Models.Connection", b =>
                 {
+                    b.HasOne("pawpals.Models.ApplicationUser", null)
+                        .WithMany("Followers")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("pawpals.Models.ApplicationUser", null)
+                        .WithMany("Following")
+                        .HasForeignKey("ApplicationUserId1");
+
                     b.HasOne("pawpals.Models.Member", "Follower")
                         .WithMany("Followers")
                         .HasForeignKey("FollowerId")
@@ -385,6 +432,13 @@ namespace pawpals.Migrations
                 });
 
             modelBuilder.Entity("pawpals.Models.Member", b =>
+                {
+                    b.Navigation("Followers");
+
+                    b.Navigation("Following");
+                });
+
+            modelBuilder.Entity("pawpals.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Followers");
 

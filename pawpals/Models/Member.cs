@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 namespace pawpals.Models
 {
 
-  public class User
+  public class Member
   {
       [Key]
-      public int UserId { get; set; }
+      public int MemberId { get; set; }
 
-      public string? Username { get; set; }
+      public string? MemberName { get; set; }
 
       public string? Email { get; set; }
 
