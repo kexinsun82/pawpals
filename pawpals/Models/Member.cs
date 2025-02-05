@@ -18,8 +18,8 @@ namespace pawpals.Models
 
       public string? Location { get; set; }
 
+      // Many to Many Relationship: Followers and Following
       public ICollection<Connection>? Followers { get; set; }
-
       public ICollection<Connection>? Following { get; set; }
         
   }

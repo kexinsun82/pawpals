@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using pawpals.Data;
 using pawpals.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace pawpals.Controllers
 {

@@ -14,18 +14,18 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            // Connection table relationships
-            modelBuilder.Entity<Connection>()
-                .HasOne(c => c.Follower)
-                .WithMany(u => u.Followers)
-                .HasForeignKey(c => c.FollowerId)
-                .OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<Connection>()
-                .HasOne(c => c.Following)
-                .WithMany(u => u.Following)
-                .HasForeignKey(c => c.FollowingId)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
+    {
+        base.OnModelCreating(modelBuilder);
+        // Connection table relationships - Bridge table
+        modelBuilder.Entity<Connection>()
+            .HasOne(c => c.Follower)
+            .WithMany(u => u.Followers)
+            .HasForeignKey(c => c.FollowerId)
+            .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Connection>()
+            .HasOne(c => c.Following)
+            .WithMany(u => u.Following)
+            .HasForeignKey(c => c.FollowingId)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
 }
