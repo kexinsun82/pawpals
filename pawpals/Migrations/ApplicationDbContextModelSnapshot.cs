@@ -378,7 +378,7 @@ namespace pawpals.Migrations
                     b.HasOne("pawpals.Models.Member", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Owner");

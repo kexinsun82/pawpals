@@ -12,8 +12,8 @@ using pawpals.Data;
 namespace pawpals.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250205201022_FixHttpGet")]
-    partial class FixHttpGet
+    [Migration("20250206195039_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -381,7 +381,7 @@ namespace pawpals.Migrations
                     b.HasOne("pawpals.Models.Member", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Owner");

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using pawpals.Data;
 using pawpals.Models;
+using pawpals.Models.DTOs;
 
 namespace pawpals.Controllers
 {
@@ -17,45 +18,87 @@ namespace pawpals.Controllers
             _context = context;
         }
 
-        // GET: api/Pet/ListPets
-        [HttpGet("ListPets")]
-        public async Task<ActionResult<IEnumerable<Pet>>> GetPets()
-        {
-            return await _context.Pets.ToListAsync();
-        }
-
         // GET: api/Pet/FindPet/5
         [HttpGet("FindPet/{id}")]
-        public async Task<ActionResult<Pet>> GetPet(int id)
+        public async Task<ActionResult<PetDTO>> GetPet(int id)
         {
-            var pet = await _context.Pets.FindAsync(id);
+            var pet = await _context.Pets
+                .Include(p => p.Owner) // 加载 Owner 数据
+                .FirstOrDefaultAsync(p => p.PetId == id);
 
             if (pet == null)
             {
                 return NotFound();
             }
 
-            return pet;
+            // 映射到 PetDTO
+            var petDto = new PetDTO
+            {
+                PetId = pet.PetId,
+                Name = pet.Name,
+                Type = pet.Type,
+                Breed = pet.Breed,
+                DOB = pet.DOB,
+                OwnerId = pet.OwnerId // 只返回 OwnerId
+            };
+
+            return petDto;
         }
 
-        // POST: api/Pet/AddPet
-        [HttpPost("AddPet")]
-        public async Task<ActionResult<Pet>> PostPet(Pet pet)
+        // GET: api/Pet/ListPets
+        [HttpGet("ListPets")]
+        public async Task<ActionResult<IEnumerable<PetDTO>>> GetPets()
         {
+            var pets = await _context.Pets
+                .Include(p => p.Owner) // 加载 Owner 数据
+                .Select(p => new PetDTO
+                {
+                    PetId = p.PetId,
+                    Name = p.Name,
+                    Type = p.Type,
+                    Breed = p.Breed,
+                    DOB = p.DOB,
+                    OwnerId = p.OwnerId // 只返回 OwnerId
+                })
+                .ToListAsync();
+
+            return pets;
+        }
+
+        [HttpPost("AddPet")]
+        public async Task<ActionResult<Pet>> PostPet(PetDTO petDto)
+        {
+            var pet = new Pet
+            {
+                Name = petDto.Name,
+                Type = petDto.Type,
+                Breed = petDto.Breed,
+                DOB = petDto.DOB,
+                OwnerId = petDto.OwnerId // 只存 OwnerId
+            };
+
             _context.Pets.Add(pet);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPet", new { id = pet.PetId }, pet);
+            return CreatedAtAction(nameof(GetPet), new { id = pet.PetId }, pet);
         }
 
         // PUT: api/Pet/UpdatePet/5
         [HttpPut("UpdatePet/{id}")]
-        public async Task<IActionResult> PutPet(int id, Pet pet)
+        public async Task<IActionResult> PutPet(int id, PetDTO petDto)
         {
-            if (id != pet.PetId)
+            var pet = await _context.Pets.FindAsync(id);
+            if (pet == null)
             {
-                return BadRequest();
+                return NotFound();
             }
+
+            // 更新宠物信息
+            pet.Name = petDto.Name;
+            pet.Type = petDto.Type;
+            pet.Breed = petDto.Breed;
+            pet.DOB = petDto.DOB;
+            pet.OwnerId = petDto.OwnerId; // 只存 OwnerId
 
             _context.Entry(pet).State = EntityState.Modified;
 

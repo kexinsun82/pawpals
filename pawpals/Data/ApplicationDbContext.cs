@@ -16,7 +16,13 @@ public class ApplicationDbContext : IdentityDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        // Connection table relationships - Bridge table
+        // Member-Pet table relationships
+        modelBuilder.Entity<Pet>()
+        .HasOne(p => p.Owner) 
+        .WithMany() 
+        .HasForeignKey(p => p.OwnerId) 
+        .OnDelete(DeleteBehavior.Restrict);
+        // Member-Connection table relationships - Bridge table
         modelBuilder.Entity<Connection>()
             .HasOne(c => c.Follower)
             .WithMany(u => u.Followers)
