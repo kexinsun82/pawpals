@@ -18,132 +18,89 @@ namespace pawpals.Controllers
             _context = context;
         }
 
-        // GET: api/Connection/FindConnection/{id}
-        [HttpGet("FindConnection/{id}")]
-        public async Task<ActionResult<ConnectionDTO>> GetConnection(int id)
+        /// <summary>
+        /// Creates a new follow relationship between two members.
+        /// </summary>
+        /// <example>
+        /// POST api/Connection/Follow/1/2 -> "Followed successfully"
+        /// ------
+        /// Error: Already following
+        /// POST api/Connection/Follow/1/2 -> "You are already following this user."
+        /// </example>
+        /// <returns>
+        /// Success message if follow is successful. Error message if already following.
+        /// </returns>
+        [HttpPost("NewFollow/{memberId}/{followingId}")]
+        public async Task<ActionResult> FollowUser(int memberId, int followingId)
         {
-            var connection = await _context.Connections
-                .Include(c => c.Follower)
-                .Include(c => c.Following)
-                .FirstOrDefaultAsync(c => c.ConnectionId == id);
-
-            if (connection == null)
-            {
-                return NotFound();
-            }
-
-            var connectionDto = new ConnectionDTO
-            {
-                ConnectionId = connection.ConnectionId,
-                FollowerId = connection.FollowerId,
-                FollowingId = connection.FollowingId
-            };
-
-            return Ok(connectionDto);
-        }
-
-        // GET: api/Connection/ListConnections
-        [HttpGet("ListConnections")]
-        public async Task<ActionResult<IEnumerable<ConnectionDTO>>> GetConnections()
-        {
-            var connections = await _context.Connections
-                .Include(c => c.Follower)
-                .Include(c => c.Following)
-                .Select(c => new ConnectionDTO
-                {
-                    FollowerId = c.Follower.MemberId,
-                    FollowingId = c.Following.MemberId
-                })
-                .ToListAsync();
-
-            return Ok(connections);
-        }
-
-        [HttpPost("/api/Connection/Follow/{followerId}/{followingId}")]
-        public async Task<ActionResult> Follow(int followerId, int followingId)
-        {
-            if (followerId == followingId)
+            // 确保用户不会关注自己
+            if (memberId == followingId)
             {
                 return BadRequest("You cannot follow yourself.");
             }
 
+            // 检查是否已经关注过
             var existingConnection = await _context.Connections
-                .FirstOrDefaultAsync(c => c.FollowerId == followerId && c.FollowingId == followingId);
+                .FirstOrDefaultAsync(c => c.FollowerId == memberId && c.FollowingId == followingId);
 
             if (existingConnection != null)
             {
-                return BadRequest("Already following.");
+                return Conflict("You are already following this user.");
             }
 
-            var connection = new Connection
+            // 创建新关注关系
+            var newConnection = new Connection
             {
-                FollowerId = followerId,
+                FollowerId = memberId,
                 FollowingId = followingId
             };
 
-            _context.Connections.Add(connection);
+            _context.Connections.Add(newConnection);
             await _context.SaveChangesAsync();
 
-            return Ok("Followed successfully.");
+            return Ok("Followed successfully");
         }
 
-        [HttpPut("UpdateConnection/{id}")]
-        public async Task<IActionResult> PutConnection(int id, ConnectionDTO connectionDto)
-        {
-            if (id != connectionDto.ConnectionId)
-            {
-                return BadRequest("Connection ID does not match");
-            }
+        
+        // [HttpGet("CheckFollowStatus/{memberId}/{followingId}")]
+        // public async Task<ActionResult<bool>> CheckFollowStatus(int memberId, int followingId)
+        // {
+        //     var existingConnection = await _context.Connections
+        //         .AnyAsync(c => c.FollowerId == memberId && c.FollowingId == followingId);
 
-            var connection = await _context.Connections.FindAsync(id);
+        //     return Ok(existingConnection);
+        // }
+
+        /// <summary>
+        /// Deletes a existing connection between two members.
+        /// </summary>
+        /// <example>
+        /// POST api/Connection/Unfollow/1/2 -> "Unfollowed successfully"
+        /// ------
+        /// Error: Connection not found
+        /// POST api/Connection/Unfollow/1/2 -> "Connection not found."
+        /// </example>
+        /// <returns>
+        /// Success message if follow is successful. Error message if already following.
+        /// </returns>
+        [HttpDelete("Unfollow/{memberId}/{followingId}")]
+        public async Task<IActionResult> UnfollowUser(int memberId, int followingId)
+        {
+            var connection = await _context.Connections
+                .FirstOrDefaultAsync(c => c.FollowerId == memberId && c.FollowingId == followingId);
+
             if (connection == null)
             {
-                return NotFound();
-            }
-
-            connection.FollowerId = connectionDto.FollowerId;
-            connection.FollowingId = connectionDto.FollowingId;
-
-            _context.Entry(connection).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ConnectionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // DELETE: api/Connection/DeleteConnection/5
-        [HttpDelete("DeleteConnection/{id}")]
-        public async Task<IActionResult> DeleteConnection(int id)
-        {
-            var connection = await _context.Connections.FindAsync(id);
-            if (connection == null)
-            {
-                return NotFound();
+                return NotFound("Connection not found.");
             }
 
             _context.Connections.Remove(connection);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Unfollowed successfully");
+            // return NoContent();
         }
 
-        private bool ConnectionExists(int id)
-        {
-            return _context.Connections.Any(e => e.ConnectionId == id);
-        }
+        
     }
 }

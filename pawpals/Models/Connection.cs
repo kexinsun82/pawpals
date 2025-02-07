@@ -10,15 +10,17 @@ namespace pawpals.Models
       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
       public int ConnectionId { get; set; }
 
+      [Required]
       public int FollowerId { get; set; }
 
+      [Required]
       public int FollowingId { get; set; }
 
       [ForeignKey("FollowerId")]
-      public Member? Follower { get; set; }
+      public Member? Follower { get; set; } = null!;
 
       [ForeignKey("FollowingId")]
-      public Member? Following { get; set; }
+      public Member? Following { get; set; } = null!;
         
   }
 
