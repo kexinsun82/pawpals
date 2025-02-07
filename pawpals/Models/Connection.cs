@@ -7,6 +7,7 @@ namespace pawpals.Models
   public class Connection
   {
       [Key]
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
       public int ConnectionId { get; set; }
 
       public int FollowerId { get; set; }

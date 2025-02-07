@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace pawpals.Models
 {
@@ -6,13 +7,14 @@ namespace pawpals.Models
   public class Member
   {
       [Key]
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
       public int MemberId { get; set; }
 
       public string? MemberName { get; set; }
 
       public string? Email { get; set; }
 
-      public string? Password { get; set; }
+      // public string? Password { get; set; }
 
       public string? Bio { get; set; }
 

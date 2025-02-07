@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace pawpals.Models
 {
@@ -6,6 +7,7 @@ namespace pawpals.Models
   public class Pet
   {
       [Key]
+      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
       public int PetId { get; set; }
 
       public string? Name { get; set; }

@@ -59,27 +59,32 @@ namespace pawpals.Controllers
             return Ok(connections);
         }
 
-        // POST: api/Connection/AddConnection
-        [HttpPost("AddConnection")]
-        public async Task<ActionResult<ConnectionDTO>> PostConnection(ConnectionDTO connectionDto)
+        [HttpPost("/api/Connection/Follow/{followerId}/{followingId}")]
+        public async Task<ActionResult> Follow(int followerId, int followingId)
         {
-            var newConnection = new Connection
+            if (followerId == followingId)
             {
-                FollowerId = connectionDto.FollowerId,
-                FollowingId = connectionDto.FollowingId
+                return BadRequest("You cannot follow yourself.");
+            }
+
+            var existingConnection = await _context.Connections
+                .FirstOrDefaultAsync(c => c.FollowerId == followerId && c.FollowingId == followingId);
+
+            if (existingConnection != null)
+            {
+                return BadRequest("Already following.");
+            }
+
+            var connection = new Connection
+            {
+                FollowerId = followerId,
+                FollowingId = followingId
             };
 
-            _context.Connections.Add(newConnection);
+            _context.Connections.Add(connection);
             await _context.SaveChangesAsync();
 
-            var createdDto = new ConnectionDTO
-            {
-                ConnectionId = newConnection.ConnectionId, // 由数据库生成
-                FollowerId = newConnection.FollowerId,
-                FollowingId = newConnection.FollowingId
-            };
-
-            return CreatedAtAction(nameof(GetConnection), new { id = createdDto.ConnectionId }, createdDto);
+            return Ok("Followed successfully.");
         }
 
         [HttpPut("UpdateConnection/{id}")]

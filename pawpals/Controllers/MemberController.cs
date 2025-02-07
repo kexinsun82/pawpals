@@ -18,7 +18,7 @@ namespace pawpals.Controllers
             _context = context;
         }
 
-        // GET: api/Member/FindMember/{id}
+        // GET: api/Member/FindMember/{memberId}
         [HttpGet("FindMember/{id}")]
         public async Task<ActionResult<MemberDTO>> GetMember(int id)
         {
@@ -38,14 +38,44 @@ namespace pawpals.Controllers
                 MemberName = member.MemberName,
                 Email = member.Email,
                 Bio = member.Bio,
-                Location = member.Location,
-
-                // 只返回 connectionId
-                FollowerConnectionIds = member.Followers.Select(f => f.ConnectionId).ToList(),
-                FollowingConnectionIds = member.Following.Select(f => f.ConnectionId).ToList()
+                Location = member.Location
             };
 
             return memberDto;
+        }
+
+        // GET: /api/member/followers/{memberId}
+        [HttpGet("/api/Member/Followers/{memberId}")]
+        public async Task<ActionResult<List<BasicMemberDTO>>> GetFollowers(int memberId)
+        {
+            var followers = await _context.Connections
+                .Where(c => c.FollowingId == memberId)
+                .Include(c => c.Follower)
+                .Select(c => new BasicMemberDTO
+                {
+                    MemberId = c.Follower.MemberId,
+                    MemberName = c.Follower.MemberName
+                })
+                .ToListAsync();
+
+            return Ok(followers);
+        }
+
+        // GET: /api/member/following/{memberId}
+        [HttpGet("/api/Member/Following/{memberId}")]
+        public async Task<ActionResult<List<BasicMemberDTO>>> GetFollowing(int memberId)
+        {
+            var following = await _context.Connections
+                .Where(c => c.FollowerId == memberId)
+                .Include(c => c.Following)
+                .Select(c => new BasicMemberDTO
+                {
+                    MemberId = c.Following.MemberId,
+                    MemberName = c.Following.MemberName
+                })
+                .ToListAsync();
+
+            return Ok(following);
         }
 
         // GET: api/Member/ListMembers
@@ -61,11 +91,7 @@ namespace pawpals.Controllers
                     MemberName = m.MemberName,
                     Email = m.Email,
                     Bio = m.Bio,
-                    Location = m.Location,
-
-                    // 获取所有 connectionId，而不是完整的 Member 对象
-                    FollowerConnectionIds = m.Followers.Select(f => f.ConnectionId).ToList(),
-                    FollowingConnectionIds = m.Following.Select(f => f.ConnectionId).ToList()
+                    Location = m.Location
                 })
                 .ToListAsync();
 
@@ -76,7 +102,7 @@ namespace pawpals.Controllers
         [HttpPost("AddMember")]
         public async Task<ActionResult<MemberDTO>> PostMember(MemberDTO memberDto)
         {
-            var member = new Member
+            var newMember = new Member
             {
                 MemberName = memberDto.MemberName,
                 Email = memberDto.Email,
@@ -84,10 +110,10 @@ namespace pawpals.Controllers
                 Location = memberDto.Location
             };
 
-            _context.Members.Add(member);
+            _context.Members.Add(newMember);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMember), new { id = member.MemberId }, memberDto);
+            return CreatedAtAction(nameof(GetMember), new { id = newMember.MemberId }, memberDto);
         }
 
         // PUT: api/Member/UpdateMember/{id}
@@ -96,7 +122,7 @@ namespace pawpals.Controllers
         {
             if (id != memberDto.MemberId)
             {
-                return BadRequest();
+                return BadRequest("Member ID in the URL does not match the ID in the body.");
             }
 
             var member = await _context.Members.FindAsync(id);
