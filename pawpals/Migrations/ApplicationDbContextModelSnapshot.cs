@@ -265,9 +265,6 @@ namespace pawpals.Migrations
                     b.Property<string>("MemberName")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("longtext");
-
                     b.HasKey("MemberId");
 
                     b.ToTable("Members");
@@ -290,17 +287,35 @@ namespace pawpals.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("OwnerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Type")
                         .HasColumnType("longtext");
 
                     b.HasKey("PetId");
 
+                    b.ToTable("Pets");
+                });
+
+            modelBuilder.Entity("pawpals.Models.PetOwner", b =>
+                {
+                    b.Property<int>("PetOwnerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PetOwnerId"));
+
+                    b.Property<int>("OwnerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PetId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PetOwnerId");
+
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Pets");
+                    b.HasIndex("PetId");
+
+                    b.ToTable("PetOwners");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -373,15 +388,23 @@ namespace pawpals.Migrations
                     b.Navigation("Following");
                 });
 
-            modelBuilder.Entity("pawpals.Models.Pet", b =>
+            modelBuilder.Entity("pawpals.Models.PetOwner", b =>
                 {
                     b.HasOne("pawpals.Models.Member", "Owner")
-                        .WithMany()
+                        .WithMany("PetOwners")
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("pawpals.Models.Pet", "Pet")
+                        .WithMany("PetOwners")
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Owner");
+
+                    b.Navigation("Pet");
                 });
 
             modelBuilder.Entity("pawpals.Models.Member", b =>
@@ -389,6 +412,13 @@ namespace pawpals.Migrations
                     b.Navigation("Followers");
 
                     b.Navigation("Following");
+
+                    b.Navigation("PetOwners");
+                });
+
+            modelBuilder.Entity("pawpals.Models.Pet", b =>
+                {
+                    b.Navigation("PetOwners");
                 });
 #pragma warning restore 612, 618
         }

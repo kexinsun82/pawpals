@@ -17,8 +17,18 @@ namespace pawpals.Controllers
         {
             _context = context;
         }
-
-        // GET: api/Member/FindMember/{memberId}
+        /// <summary>
+        // Gets a specific member by ID
+        /// </summary>
+        /// <param name="id">The ID of the member</param>
+        /// <example>
+        /// GET api/Member/FindMember/1
+        /// </example>
+        /// <returns>
+        /// The member details if found, otherwise a 404 response.
+        /// </returns>
+        /// <response code="200">Returns the member's information</response>
+        /// <response code="404">If no member is found with the given ID</response>
         [HttpGet("FindMember/{id}")]
         public async Task<ActionResult<MemberDTO>> GetMember(int id)
         {
@@ -44,7 +54,18 @@ namespace pawpals.Controllers
             return memberDto;
         }
 
-        // GET: /api/member/followers/{memberId}
+        /// <summary>
+        /// Show a list of members who follow the specified member.
+        /// </summary>
+        /// <param name="memberId">The ID of the member whose followers should be retrieved</param>
+        /// <example>
+        /// GET api/Member/Followers/1
+        /// </example>
+        /// <returns>
+        /// A list of basic member details of the followers.
+        /// </returns>
+        /// <response code="200">Returns a list of followers</response>
+        /// <response code="404">If the member with the given ID is not found</response>
         [HttpGet("/api/Member/Followers/{memberId}")]
         public async Task<ActionResult<List<BasicMemberDTO>>> GetFollowers(int memberId)
         {
@@ -61,7 +82,18 @@ namespace pawpals.Controllers
             return Ok(followers);
         }
 
-        // GET: /api/member/following/{memberId}
+        /// <summary>
+        /// Show a list of members that the specified member is following.
+        /// </summary>
+        /// <param name="memberId">The ID of the member whose followings should be retrieved</param>
+        /// <example>
+        /// GET api/Member/Following/1
+        /// </example>
+        /// <returns>
+        /// A list of members that the given member follows.
+        /// </returns>
+        /// <response code="200">Returns a list of followings</response>
+        /// <response code="404">If the member with the given ID is not found</response>
         [HttpGet("/api/Member/Following/{memberId}")]
         public async Task<ActionResult<List<BasicMemberDTO>>> GetFollowing(int memberId)
         {
@@ -78,7 +110,16 @@ namespace pawpals.Controllers
             return Ok(following);
         }
 
-        // GET: api/Member/ListMembers
+        /// <summary>
+        /// Retrieves a list of all members in the system.
+        /// </summary>
+        /// <example>
+        /// GET api/Member/ListMembers
+        /// </example>
+        /// <returns>
+        /// A list of all registered members.
+        /// </returns>
+        /// <response code="200">Returns a list of members</response>
         [HttpGet("ListMembers")]
         public async Task<ActionResult<IEnumerable<MemberDTO>>> GetMembers()
         {
@@ -98,7 +139,24 @@ namespace pawpals.Controllers
             return members;
         }
 
-        // POST: api/Member/AddMember
+        /// <summary>
+        /// Adds a new member to the system.
+        /// </summary>
+        /// <param name="memberDto">The member data transfer object containing details of the new member</param>
+        /// <example>
+        /// POST api/Member/AddMember
+        /// {
+        ///   "memberName": "John Doe",
+        ///   "email": "john@example.com",
+        ///   "bio": "Hi！",
+        ///   "location": "New York"
+        /// }
+        /// </example>
+        /// <returns>
+        /// The newly created member with their details.
+        /// </returns>
+        /// <response code="201">Returns the newly created member</response>
+        /// <response code="400">If the input data is invalid</response>
         [HttpPost("AddMember")]
         public async Task<ActionResult<MemberDTO>> PostMember(MemberDTO memberDto)
         {
@@ -116,7 +174,27 @@ namespace pawpals.Controllers
             return CreatedAtAction(nameof(GetMember), new { id = newMember.MemberId }, memberDto);
         }
 
-        // PUT: api/Member/UpdateMember/{id}
+        /// <summary>
+        /// Updates the details of an existing member.
+        /// </summary>
+        /// <param name="id">The ID of the member to update</param>
+        /// <param name="memberDto">The updated member details</param>
+        /// <example>
+        /// PUT api/Member/UpdateMember/1
+        /// {
+        ///   "memberId": 1,
+        ///   "memberName": "John Doe Updated",
+        ///   "email": "john@etest.com",
+        ///   "bio": "Loves dogs",
+        ///   "location": "Toronto"
+        /// }
+        /// </example>
+        /// <returns>
+        /// No content if the update is successful.
+        /// </returns>
+        /// <response code="204">Update successful</response>
+        /// <response code="400">If the ID in the URL does not match the ID in the request body</response>
+        /// <response code="404">If the member with the given ID is not found</response>
         [HttpPut("UpdateMember/{id}")]
         public async Task<IActionResult> PutMember(int id, MemberDTO memberDto)
         {
@@ -162,7 +240,18 @@ namespace pawpals.Controllers
             return _context.Members.Any(e => e.MemberId == id);
         }
 
-        // DELETE: api/Member/DeleteMember/{id}
+        /// <summary>
+        /// Deletes a member from the system.
+        /// </summary>
+        /// <param name="id">The ID of the member to delete</param>
+        /// <example>
+        /// DELETE api/Member/DeleteMember/1
+        /// </example>
+        /// <returns>
+        /// No content if the deletion is successful.
+        /// </returns>
+        /// <response code="204">Operation successful</response>
+        /// <response code="404">If the member with the given ID is not found</response>
         [HttpDelete("DeleteMember/{id}")]
         public async Task<IActionResult> DeleteMember(int id)
         {

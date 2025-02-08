@@ -23,8 +23,8 @@ namespace pawpals.Models
       // Many to Many Relationship: Followers and Following
       public ICollection<Connection> Followers { get; set; } = new List<Connection>();
       public ICollection<Connection> Following { get; set; } = new List<Connection>();
-      // public ICollection<Connection>? Followers { get; set; }
-      // public ICollection<Connection>? Following { get; set; }
+
+      public ICollection<PetOwner> PetOwners { get; set; } = new List<PetOwner>();
         
   }
 

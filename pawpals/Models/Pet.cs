@@ -17,9 +17,11 @@ namespace pawpals.Models
 
       public DateTime DOB { get; set; }
 
-      public int OwnerId { get; set; }
+      // public int OwnerId { get; set; }
 
-      public Member? Owner { get; set; }
+      // public Member? Owner { get; set; }
+
+      public ICollection<PetOwner> PetOwners { get; set; } = new List<PetOwner>();
         
   }
 

@@ -79,8 +79,6 @@ namespace pawpals.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Password = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Bio = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location = table.Column<string>(type: "longtext", nullable: true)
@@ -89,6 +87,26 @@ namespace pawpals.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Members", x => x.MemberId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Pets",
+                columns: table => new
+                {
+                    PetId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Type = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Breed = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DOB = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pets", x => x.PetId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -247,29 +265,29 @@ namespace pawpals.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Pets",
+                name: "PetOwners",
                 columns: table => new
                 {
-                    PetId = table.Column<int>(type: "int", nullable: false)
+                    PetOwnerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Type = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Breed = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    DOB = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    PetId = table.Column<int>(type: "int", nullable: false),
                     OwnerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pets", x => x.PetId);
+                    table.PrimaryKey("PK_PetOwners", x => x.PetOwnerId);
                     table.ForeignKey(
-                        name: "FK_Pets_Members_OwnerId",
+                        name: "FK_PetOwners_Members_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "Members",
                         principalColumn: "MemberId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PetOwners_Pets_PetId",
+                        column: x => x.PetId,
+                        principalTable: "Pets",
+                        principalColumn: "PetId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -321,9 +339,14 @@ namespace pawpals.Migrations
                 column: "FollowingId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pets_OwnerId",
-                table: "Pets",
+                name: "IX_PetOwners_OwnerId",
+                table: "PetOwners",
                 column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PetOwners_PetId",
+                table: "PetOwners",
+                column: "PetId");
         }
 
         /// <inheritdoc />
@@ -348,7 +371,7 @@ namespace pawpals.Migrations
                 name: "Connections");
 
             migrationBuilder.DropTable(
-                name: "Pets");
+                name: "PetOwners");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -358,6 +381,9 @@ namespace pawpals.Migrations
 
             migrationBuilder.DropTable(
                 name: "Members");
+
+            migrationBuilder.DropTable(
+                name: "Pets");
         }
     }
 }

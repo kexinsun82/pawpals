@@ -33,13 +33,13 @@ namespace pawpals.Controllers
         [HttpPost("NewFollow/{memberId}/{followingId}")]
         public async Task<ActionResult> FollowUser(int memberId, int followingId)
         {
-            // 确保用户不会关注自己
+            // Member can not follow themself
             if (memberId == followingId)
             {
                 return BadRequest("You cannot follow yourself.");
             }
 
-            // 检查是否已经关注过
+            // Check the connection whether existing
             var existingConnection = await _context.Connections
                 .FirstOrDefaultAsync(c => c.FollowerId == memberId && c.FollowingId == followingId);
 
@@ -48,7 +48,7 @@ namespace pawpals.Controllers
                 return Conflict("You are already following this user.");
             }
 
-            // 创建新关注关系
+            // Create a new connection
             var newConnection = new Connection
             {
                 FollowerId = memberId,
@@ -60,16 +60,6 @@ namespace pawpals.Controllers
 
             return Ok("Followed successfully");
         }
-
-        
-        // [HttpGet("CheckFollowStatus/{memberId}/{followingId}")]
-        // public async Task<ActionResult<bool>> CheckFollowStatus(int memberId, int followingId)
-        // {
-        //     var existingConnection = await _context.Connections
-        //         .AnyAsync(c => c.FollowerId == memberId && c.FollowingId == followingId);
-
-        //     return Ok(existingConnection);
-        // }
 
         /// <summary>
         /// Deletes a existing connection between two members.
@@ -98,7 +88,6 @@ namespace pawpals.Controllers
             await _context.SaveChangesAsync();
 
             return Ok("Unfollowed successfully");
-            // return NoContent();
         }
 
         
