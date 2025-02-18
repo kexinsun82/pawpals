@@ -1,0 +1,25 @@
+@model pawpals.Models.DTOs.ConnectionDTO
+
+@{
+    ViewData["Title"] = "Edit Connection";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Edit Connection</h2>
+    <form asp-action="UpdateConnection" method="post">
+        <input type="hidden" name="ConnectionId" value="@Model.ConnectionId" />
+
+        <div class="mb-3">
+            <label for="followerId" class="form-label">Follower ID</label>
+            <input type="number" class="form-control" id="followerId" name="FollowerId" value="@Model.FollowerId" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="followingId" class="form-label">Following ID</label>
+            <input type="number" class="form-control" id="followingId" name="FollowingId" value="@Model.FollowingId" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="/Connection/List" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

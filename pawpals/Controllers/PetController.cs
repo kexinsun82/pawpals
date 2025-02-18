@@ -130,15 +130,21 @@ namespace pawpals.Controllers
             // Link all owners
             foreach (var ownerId in petDto.OwnerIds)
             {
+                var owner = await _context.Members.FindAsync(ownerId);
+                if (owner == null)
+                {
+                    return BadRequest($"Owner with ID {ownerId} not found");
+                }
+
                 var petOwner = new PetOwner
                 {
                     PetId = pet.PetId,
-                    OwnerId = ownerId
+                    OwnerId = ownerId,
+                    Pet = pet,
+                    Owner = owner
                 };
                 _context.PetOwners.Add(petOwner);
             }
-
-            await _context.SaveChangesAsync();
 
             // Return PetDTO
             var resultDto = new PetDTO
@@ -203,14 +209,24 @@ namespace pawpals.Controllers
             _context.PetOwners.RemoveRange(ownersToRemove);
 
             // Add new Owner
-            var ownersToAdd = newOwnerIds
-                .Where(ownerId => !currentOwnerIds.Contains(ownerId))
-                .Select(ownerId => new PetOwner
+            var ownersToAdd = new List<PetOwner>();
+            foreach (var ownerId in newOwnerIds.Where(id => !currentOwnerIds.Contains(id)))
+            {
+                var owner = await _context.Members.FindAsync(ownerId);
+                if (owner == null)
+                {
+                    return BadRequest($"Owner with ID {ownerId} not found");
+                }
+
+                var petOwner = new PetOwner
                 {
                     PetId = pet.PetId,
-                    OwnerId = ownerId
-                })
-                .ToList();
+                    OwnerId = ownerId,
+                    Pet = pet,
+                    Owner = owner
+                };
+                ownersToAdd.Add(petOwner);
+            }
             _context.PetOwners.AddRange(ownersToAdd);
 
             _context.Entry(pet).State = EntityState.Modified;
@@ -382,7 +398,9 @@ namespace pawpals.Controllers
             var petOwner = new PetOwner
             {
                 PetId = petId,
-                OwnerId = memberId
+                OwnerId = memberId,
+                Pet = pet,
+                Owner = member
             };
 
             _context.PetOwners.Add(petOwner);

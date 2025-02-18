@@ -9,6 +9,6 @@ namespace pawpals.Models.DTOs{
       public string? Breed { get; set; }
       public DateTime DOB { get; set; }
       // public int OwnerId { get; set; } // return ownerid
-      public List<int> OwnerIds { get; set; }
+      public List<int> OwnerIds { get; set; } = new List<int>();
   }
 }

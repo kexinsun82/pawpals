@@ -1,29 +1,23 @@
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using pawpals.Data;
 using pawpals.Models;
-using System.Diagnostics;
+using pawpals.Models.DTOs;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using pawpals.Models.DTOs;
 
-namespace pawpals.Controllers
+namespace pawpals.Services
 {
-    public class HomeController : Controller
+    public class HomeService : IHomeService
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeService(ApplicationDbContext context)
         {
-            _logger = logger;
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<HomeViewModel> GetHomePageDataAsync(int userId)
         {
-            int userId = 1; // 假设当前用户 ID 为 1，实际应用中应从身份验证获取
-
             var member = await _context.Members.FindAsync(userId);
             var pets = await _context.Pets
                 .Where(p => _context.PetOwners.Any(po => po.OwnerId == userId && po.PetId == p.PetId))
@@ -38,7 +32,7 @@ namespace pawpals.Controllers
                 })
                 .ToListAsync();
             var recommendedFriends = await _context.Members
-                .Where(m => m.MemberId != userId) // 排除当前用户
+                .Where(m => m.MemberId != userId)
                 .Select(m => new BasicMemberDTO
                 {
                     MemberId = m.MemberId,
@@ -46,7 +40,7 @@ namespace pawpals.Controllers
                 })
                 .ToListAsync();
 
-            var viewModel = new HomeViewModel
+            return new HomeViewModel
             {
                 Member = member != null ? new MemberDTO
                 {
@@ -62,24 +56,14 @@ namespace pawpals.Controllers
                     Type = p.Type,
                     Breed = p.Breed,
                     DOB = p.DOB,
-                    OwnerIds = _context.PetOwners.Where(po => po.PetId == p.PetId).Select(po => po.OwnerId).ToList()
+                    OwnerIds = _context.PetOwners
+                        .Where(po => po.PetId == p.PetId)
+                        .Select(po => po.OwnerId)
+                        .ToList()
                 }).ToList(),
                 Friends = friends,
                 RecommendedFriends = recommendedFriends
             };
-
-            return View(viewModel);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

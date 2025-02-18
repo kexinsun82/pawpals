@@ -1,0 +1,45 @@
+@model pawpals.Models.DTOs.MemberDTO
+
+@{
+    ViewData["Title"] = "Update Member Information";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Update Member Information</h2>
+    <form asp-action="UpdateMember" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="memberName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="memberName" name="MemberName" value="@Model.MemberName" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="Email" value="@Model.Email" required>
+        </div>
+        <div class="mb-3">
+            <label for="bio" class="form-label">Bio</label>
+            <textarea class="form-control" id="bio" name="Bio" rows="3">@Model.Bio</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="Location" value="@Model.Location" required>
+        </div>
+        <div class="mb-3">
+            <label for="memberImage" class="form-label">Upload Profile Picture</label>
+            <input type="file" class="form-control" id="memberImage" name="MemberImage" accept="image/*" onchange="previewMemberImage(event)">
+            <img id="memberImagePreview" class="img-fluid mt-2" style="max-height: 200px; display: none;">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Member</button>
+    </form>
+</div>
+
+<script>
+function previewMemberImage(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var output = document.getElementById('memberImagePreview');
+        output.src = reader.result;
+        output.style.display = 'block';
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>

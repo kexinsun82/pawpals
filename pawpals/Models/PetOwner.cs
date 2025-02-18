@@ -12,9 +12,9 @@ namespace pawpals.Models
         public int OwnerId { get; set; }
 
         [ForeignKey("PetId")]
-        public Pet Pet { get; set; }
+        public required Pet Pet { get; set; }
 
         [ForeignKey("OwnerId")]
-        public Member Owner { get; set; }
+        public required Member Owner { get; set; }
     }
 }

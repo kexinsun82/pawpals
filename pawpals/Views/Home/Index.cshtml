@@ -1,8 +1,66 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model pawpals.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h1>Welcome, @Model.Member.MemberName!</h1>
+
+    <!-- 用户信息 -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Your Profile</h5>
+            <p class="card-text">Email: @Model.Member.Email</p>
+            <p class="card-text">Bio: @Model.Member.Bio</p>
+        </div>
+    </div>
+
+    <!-- 宠物列表 -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Your Pets</h5>
+            <ul class="list-group">
+                @foreach (var pet in Model.Pets)
+                {
+                    <li class="list-group-item">
+                        <strong>@pet.Name</strong> - @pet.Type (@pet.Breed)
+                        <br />
+                        <small>DOB: @pet.DOB.ToShortDateString()</small>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <!-- 好友列表 -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Your Friends</h5>
+            <ul class="list-group">
+                @foreach (var friend in Model.Friends)
+                {
+                    <li class="list-group-item">
+                        @friend.MemberName
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <!-- 推荐好友列表 -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Recommended Friends</h5>
+            <ul class="list-group">
+                @foreach (var recommendedFriend in Model.RecommendedFriends)
+                {
+                    <li class="list-group-item">
+                        @recommendedFriend.MemberName
+                        <a href="#" class="btn btn-primary btn-sm float-right">Add Friend</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 </div>
