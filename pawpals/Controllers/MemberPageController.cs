@@ -24,7 +24,9 @@ namespace pawpals.Controllers
                 {
                     MemberId = m.MemberId,
                     MemberName = m.MemberName,
-                    Email = m.Email
+                    Email = m.Email,
+                    Bio = m.Bio,
+                    Location = m.Location
                 })
                 .ToListAsync();
 
@@ -39,7 +41,9 @@ namespace pawpals.Controllers
                 {
                     MemberId = m.MemberId,
                     MemberName = m.MemberName,
-                    Email = m.Email
+                    Email = m.Email,
+                    Bio = m.Bio,
+                    Location = m.Location
                 })
                 .FirstOrDefaultAsync();
 
@@ -61,7 +65,9 @@ namespace pawpals.Controllers
             var member = new Member
             {
                 MemberName = memberDto.MemberName,
-                Email = memberDto.Email
+                Email = memberDto.Email,
+                Bio = memberDto.Bio,
+                Location = memberDto.Location
             };
 
             _context.Members.Add(member);
@@ -79,7 +85,9 @@ namespace pawpals.Controllers
             {
                 MemberId = member.MemberId,
                 MemberName = member.MemberName,
-                Email = member.Email
+                Email = member.Email,
+                Bio = member.Bio,
+                Location = member.Location
             };
 
             return View(memberDto);
@@ -98,6 +106,8 @@ namespace pawpals.Controllers
 
             member.MemberName = memberDto.MemberName;
             member.Email = memberDto.Email;
+            member.Bio = memberDto.Bio;         
+            member.Location = memberDto.Location;
 
             _context.Members.Update(member);
             await _context.SaveChangesAsync();

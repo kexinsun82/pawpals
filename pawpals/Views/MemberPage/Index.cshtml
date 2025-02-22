@@ -1,12 +1,15 @@
 ﻿@model List<pawpals.Models.DTOs.MemberDTO>
 
 <h2 class="text-center">Member List</h2>
-<a asp-action="Create" class="btn btn-success">Create New Member</a>
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New Member</a>
+</p>
 <br>
 
 <table class="table">
     <thead>
         <tr>
+            <th>MemberId</th>
             <th>Name</th>
             <th>Email</th>
             <th>Actions</th>
@@ -16,6 +19,7 @@
         @foreach (var member in Model)
         {
             <tr>
+                <td>@member.MemberId</td>
                 <td>@member.MemberName</td>
                 <td>@member.Email</td>
                 <td>
