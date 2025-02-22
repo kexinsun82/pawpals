@@ -265,7 +265,12 @@ namespace pawpals.Migrations
                     b.Property<string>("MemberName")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("MemberId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Members");
                 });
@@ -386,6 +391,15 @@ namespace pawpals.Migrations
                     b.Navigation("Follower");
 
                     b.Navigation("Following");
+                });
+
+            modelBuilder.Entity("pawpals.Models.Member", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("pawpals.Models.PetOwner", b =>

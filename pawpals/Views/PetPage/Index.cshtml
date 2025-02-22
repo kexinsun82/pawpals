@@ -1,0 +1,15 @@
+@model List<pawpals.Models.DTOs.PetDTO>
+
+@{
+    ViewData["Title"] = "Pets";
+}
+
+<h2>Pet List</h2>
+<a href="/PetPage/Create" class="btn btn-primary">Add Pet</a>
+
+<ul>
+    @foreach (var pet in Model)
+    {
+        <li>@pet.Name - @pet.Type <a href="/PetPage/Details/@pet.PetId">View</a> | <a href="/PetPage/Edit/@pet.PetId">Edit</a></li>
+    }
+</ul>

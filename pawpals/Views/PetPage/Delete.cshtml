@@ -1,0 +1,28 @@
+﻿@model pawpals.Models.PetDetails
+
+@{
+    ViewData["Title"] = "Delete Pet";
+}
+
+<div class="container">
+    <h1>Delete Pet</h1>
+
+    <div class="alert alert-danger">
+        Are you sure you want to delete this pet?
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Pet.Name</h5>
+            <p class="card-text">Type: @Model.Pet.Type</p>
+            <p class="card-text">Breed: @Model.Pet.Breed</p>
+            <p class="card-text">Date of Birth: @Model.Pet.DOB.ToShortDateString()</p>
+        </div>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="@Model.Pet.PetId" />
+        <button type="submit" class="btn btn-danger mt-3">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+</div>

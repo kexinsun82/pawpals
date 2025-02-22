@@ -1,0 +1,13 @@
+﻿@model List<pawpals.Models.DTOs.MemberDTO>
+
+@{
+    ViewData["Title"] = "Members";
+}
+
+<h2>Member List</h2>
+<ul>
+    @foreach (var member in Model)
+    {
+        <li>@member.MemberName <a href="/MemberPage/Details/@member.MemberId">View</a></li>
+    }
+</ul>

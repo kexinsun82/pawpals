@@ -1,0 +1,25 @@
+@model List<pawpals.Models.Connection>
+
+@{
+    ViewData["Title"] = "Connections";
+}
+
+<h1>Connections</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Follower</th>
+            <th>Following</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var connection in Model)
+        {
+            <tr>
+                <td>@connection.Follower?.MemberName</td>
+                <td>@connection.Following?.MemberName</td>
+            </tr>
+        }
+    </tbody>
+</table>

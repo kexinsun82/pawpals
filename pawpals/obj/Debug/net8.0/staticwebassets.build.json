@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BiLH9WbaD8kqc6LJY4EXFqkU/QJ/iLMJAJEHAz37S1s=",
+  "Hash": "/V/9S2R7UbAGQY3e1yiE6M/gcG4xMUX+rP+OqTVQf70=",
   "Source": "pawpals",
   "BasePath": "_content/pawpals",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "pawpals/wwwroot",
       "Source": "pawpals",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "Pattern": "**"
     }
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "/Users/kellysun/.nuget/packages/microsoft.aspnetcore.identity.ui/8.0.11/staticwebassets/V5/lib/jquery/LICENSE.txt"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/bundle/pawpals.styles.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/bundle/pawpals.styles.css",
       "SourceId": "pawpals",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/pawpals",
       "RelativePath": "pawpals.styles.css",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/bundle/pawpals.styles.css"
+      "OriginalItemSpec": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/bundle/pawpals.styles.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/pawpals.bundle.scp.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/pawpals.bundle.scp.css",
       "SourceId": "pawpals",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/pawpals",
       "RelativePath": "pawpals.bundle.scp.css",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/pawpals.bundle.scp.css"
+      "OriginalItemSpec": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/obj/Debug/net8.0/scopedcss/projectbundle/pawpals.bundle.scp.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/css/site.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/css/site.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/favicon.ico",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/favicon.ico",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/js/site.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/js/site.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1727,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1746,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1765,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1784,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1822,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1841,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1860,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1879,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1898,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1917,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1936,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1974,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1993,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2031,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2050,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2069,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/bootstrap/LICENSE",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/bootstrap/LICENSE",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2107,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/LICENSE"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2126,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery-validation/LICENSE.md",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery/dist/jquery.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery/dist/jquery.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery/dist/jquery.min.js",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery/dist/jquery.min.map",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Identity": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/lib/jquery/LICENSE.txt",
+      "Identity": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/lib/jquery/LICENSE.txt",
       "SourceId": "pawpals",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/kellysun/Desktop/humber-github/pawpals/pawpals/wwwroot/",
+      "ContentRoot": "/Users/kellysun/Desktop/pawpalsmvp/pawpals/wwwroot/",
       "BasePath": "_content/pawpals",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

@@ -1,0 +1,17 @@
+﻿@model pawpals.Models.DTOs.PetDTO
+
+@{
+    ViewData["Title"] = "Create Pet";
+}
+
+<h2>Add New Pet</h2>
+
+<form method="post" action="/PetPage/Create">
+    <label>Name:</label>
+    <input type="text" name="Name" required />
+
+    <label>Type:</label>
+    <input type="text" name="Type" required />
+
+    <button type="submit">Save</button>
+</form>

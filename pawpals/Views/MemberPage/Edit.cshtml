@@ -1,0 +1,17 @@
+@model pawpals.Models.DTOs.MemberDTO
+
+@{
+    ViewData["Title"] = "Edit Member";
+}
+
+<h2>Edit Member</h2>
+
+<form method="post" action="/MemberPage/Edit/@Model.MemberId">
+    <label>Name:</label>
+    <input type="text" name="MemberName" value="@Model.MemberName" required />
+
+    <label>Email:</label>
+    <input type="email" name="Email" value="@Model.Email" required />
+
+    <button type="submit">Save</button>
+</form>

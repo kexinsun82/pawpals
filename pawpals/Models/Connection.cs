@@ -1,26 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace pawpals.Models
 {
 
   public class Connection
   {
-      [Key]
-      [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
       public int ConnectionId { get; set; }
-
-      [Required]
-      public int FollowerId { get; set; }
-
-      [Required]
-      public int FollowingId { get; set; }
-
-      [ForeignKey("FollowerId")]
-      public Member? Follower { get; set; } = null!;
-
-      [ForeignKey("FollowingId")]
-      public Member? Following { get; set; } = null!;
+      public int FollowerId { get; set; } 
+      public int FollowingId { get; set; } 
+      public Member? Follower { get; set; } 
+      public Member? Following { get; set; } 
         
   }
 
