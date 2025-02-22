@@ -25,7 +25,7 @@ namespace pawpals.Controllers
         public async Task<IActionResult> List()
         {
             var petDTOs = await _context.Pets
-                .Include(p => p.PetOwners) // Include the PetOwners for owner data
+                .Include(p => p.PetOwners) 
                 .Select(p => new PetDTO
                 {
                     PetId = p.PetId,
@@ -48,7 +48,7 @@ namespace pawpals.Controllers
             }
 
             var pet = await _context.Pets
-                .Include(p => p.PetOwners) // Load related owners
+                .Include(p => p.PetOwners) 
                 .FirstOrDefaultAsync(m => m.PetId == id);
 
             if (pet == null)
@@ -56,7 +56,6 @@ namespace pawpals.Controllers
                 return NotFound();
             }
 
-            // Convert Pet entity to PetDTO
             var petDetails = new PetDetails
             {
                 Pet = new PetDTO
@@ -66,7 +65,7 @@ namespace pawpals.Controllers
                     Type = pet.Type ?? string.Empty,
                     Breed = pet.Breed ?? string.Empty,
                     DOB = pet.DOB,
-                    OwnerIds = pet.PetOwners.Select(po => po.OwnerId).ToList() // Map PetOwners to OwnerIds
+                    OwnerIds = pet.PetOwners.Select(po => po.OwnerId).ToList() 
                 }
             };
 
