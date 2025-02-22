@@ -1,5 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model pawpals.Models.Member
+
+<h2>Create Member</h2>
+<form asp-action="Create" method="post">
+    <label>Name:</label>
+    <input asp-for="MemberName" required />
+    <label>Email:</label>
+    <input asp-for="Email" type="email" required />
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

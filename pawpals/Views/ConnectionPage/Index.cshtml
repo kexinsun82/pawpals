@@ -1,25 +1,28 @@
-@model List<pawpals.Models.Connection>
+@model IEnumerable<pawpals.Models.Connection>
 
-@{
-    ViewData["Title"] = "Connections";
-}
-
-<h1>Connections</h1>
-
-<table class="table">
-    <thead>
+<h2 class="text-center my-4">Connections</h2>
+<a asp-action="Create" class="btn btn-success">Create New Connection</a>
+<br>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <th>Follower</th>
-            <th>Following</th>
+            <th>Follower (ID)</th>
+            <th>Following (ID)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var connection in Model)
-        {
-            <tr>
-                <td>@connection.Follower?.MemberName</td>
-                <td>@connection.Following?.MemberName</td>
-            </tr>
-        }
+    @foreach (var connection in Model)
+    {
+        <tr>
+            <td>@connection.Follower.MemberName (@connection.FollowerId)</td>
+            <td>@connection.Following.MemberName (@connection.FollowingId)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@connection.ConnectionId" class="btn btn-warning btn-sm">Edit</a>
+                <a asp-action="Delete" asp-route-id="@connection.ConnectionId" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
+

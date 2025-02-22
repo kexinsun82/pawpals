@@ -22,12 +22,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kellysun/Desktop/pawpalsmvp/pawpals/Views/ConnectionPage/Followers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29ubmVjdGlvblBhZ2UvRm9sbG93ZXJzLmNzaHRtbA==
+[/Users/kellysun/Desktop/pawpalsmvp/pawpals/Views/ConnectionPage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29ubmVjdGlvblBhZ2UvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kellysun/Desktop/pawpalsmvp/pawpals/Views/ConnectionPage/Following.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29ubmVjdGlvblBhZ2UvRm9sbG93aW5nLmNzaHRtbA==
+[/Users/kellysun/Desktop/pawpalsmvp/pawpals/Views/ConnectionPage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29ubmVjdGlvblBhZ2UvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/kellysun/Desktop/pawpalsmvp/pawpals/Views/ConnectionPage/Index.cshtml]

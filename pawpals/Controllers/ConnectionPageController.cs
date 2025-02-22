@@ -25,17 +25,33 @@ namespace pawpals.Controllers
             return View(connections);
         }
 
-        public async Task<IActionResult> Details(int? id)
+        [HttpGet]
+        public IActionResult Create()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            return View();
+        }
 
-            var connection = await _context.Connections
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Connection connection)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Connections.Add(connection);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(connection);
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var connection = _context.Connections
                 .Include(c => c.Follower)
                 .Include(c => c.Following)
-                .FirstOrDefaultAsync(m => m.ConnectionId == id);
+                .FirstOrDefault(c => c.ConnectionId == id);
 
             if (connection == null)
             {
@@ -43,6 +59,19 @@ namespace pawpals.Controllers
             }
 
             return View(connection);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var connection = _context.Connections.Find(id);
+            if (connection != null)
+            {
+                _context.Connections.Remove(connection);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }
