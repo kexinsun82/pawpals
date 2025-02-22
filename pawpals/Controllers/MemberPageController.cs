@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using pawpals.Models.DTOs;
 using pawpals.Data;
 using System.Threading.Tasks;
 using pawpals.Models;
+using System.Linq;
 
 namespace pawpals.Controllers
 {
@@ -15,15 +17,32 @@ namespace pawpals.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var members = _context.Members.ToList();
+            var members = await _context.Members
+                .Select(m => new MemberDTO
+                {
+                    MemberId = m.MemberId,
+                    MemberName = m.MemberName,
+                    Email = m.Email
+                })
+                .ToListAsync();
+
             return View(members);
         }
 
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var member = _context.Members.Find(id);
+            var member = await _context.Members
+                .Where(m => m.MemberId == id)
+                .Select(m => new MemberDTO
+                {
+                    MemberId = m.MemberId,
+                    MemberName = m.MemberName,
+                    Email = m.Email
+                })
+                .FirstOrDefaultAsync();
+
             if (member == null) return NotFound();
             return View(member);
         }
@@ -34,60 +53,82 @@ namespace pawpals.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(MemberDTO memberDto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(MemberDTO memberDto)
         {
             if (!ModelState.IsValid) return View(memberDto);
 
             var member = new Member
             {
-                // Map properties from memberDto to member
+                MemberName = memberDto.MemberName,
+                Email = memberDto.Email
             };
+
             _context.Members.Add(member);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var member = _context.Members.Find(id);
+            var member = await _context.Members.FindAsync(id);
             if (member == null) return NotFound();
-            return View(member);
+
+            var memberDto = new MemberDTO
+            {
+                MemberId = member.MemberId,
+                MemberName = member.MemberName,
+                Email = member.Email
+            };
+
+            return View(memberDto);
         }
 
         [HttpPost]
-        public IActionResult Edit(int id, MemberDTO memberDto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, MemberDTO memberDto)
         {
             if (id != memberDto.MemberId) return BadRequest();
 
             if (!ModelState.IsValid) return View(memberDto);
 
-            var member = _context.Members.Find(id);
+            var member = await _context.Members.FindAsync(id);
             if (member == null) return NotFound();
 
-            // Map properties from memberDto to member
+            member.MemberName = memberDto.MemberName;
+            member.Email = memberDto.Email;
 
             _context.Members.Update(member);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var member = _context.Members.Find(id);
+            var member = await _context.Members
+                .Where(m => m.MemberId == id)
+                .Select(m => new MemberDTO
+                {
+                    MemberId = m.MemberId,
+                    MemberName = m.MemberName
+                })
+                .FirstOrDefaultAsync();
+
             if (member == null) return NotFound();
             return View(member);
         }
 
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var member = _context.Members.Find(id);
+            var member = await _context.Members.FindAsync(id);
             if (member == null) return NotFound();
 
             _context.Members.Remove(member);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }

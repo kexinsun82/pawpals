@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pawpals")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f69e70ce9dea2d748c8f4776e83c63e98bb97986")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74983a6d59b3e3161efb07cde45fb8d9fbc25e95")]
 [assembly: System.Reflection.AssemblyProductAttribute("pawpals")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pawpals")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

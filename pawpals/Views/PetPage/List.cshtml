@@ -7,7 +7,7 @@
 <h1>Pet List</h1>
 
 <p>
-    <a asp-action="New">Create New Pet</a>
+    <a asp-action="Create">Create New Pet</a>
 </p>
 <table class="table">
     <thead>
@@ -45,7 +45,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PetId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PetId">Details</a> |
-                <a asp-action="ConfirmDelete" asp-route-id="@item.PetId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.PetId">Delete</a>
             </td>
         </tr>
 }

@@ -1,13 +1,29 @@
 ﻿@model List<pawpals.Models.DTOs.MemberDTO>
 
-@{
-    ViewData["Title"] = "Members";
-}
-
 <h2>Member List</h2>
-<ul>
-    @foreach (var member in Model)
-    {
-        <li>@member.MemberName <a href="/MemberPage/Details/@member.MemberId">View</a></li>
-    }
-</ul>
+
+<a asp-action="Create" class="btn btn-success">Create New Member</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.MemberName</td>
+                <td>@member.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@member.MemberId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@member.MemberId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@member.MemberId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
